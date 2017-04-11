@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
   end
   def edit
 
-    end
+
   end
   def new
     @group = Group.new
@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
     end
   end
   def destroy
-  
+
     @group.destroy
     flash[:alert] = "Group deleted"
     redirect_to groups_path
@@ -46,7 +46,6 @@ class GroupsController < ApplicationController
       redirect_to root_path, alert: "You have no permission."
     end
   end
-
   def group_params
     params.require(:group).permit(:title, :description)
   end
